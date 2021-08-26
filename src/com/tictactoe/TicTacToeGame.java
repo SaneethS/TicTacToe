@@ -1,6 +1,6 @@
 package com.tictactoe;
 
-public class TicTacToe {
+public class TicTacToeGame {
 	private char[] board = new char[10];
 	
 	public void createBoard() {
@@ -12,7 +12,7 @@ public class TicTacToe {
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to board game");
-		TicTacToe ticTacToe = new TicTacToe(); 
+		TicTacToeGame ticTacToe = new TicTacToeGame(); 
 		ticTacToe.createBoard();
 	}
 }
