@@ -11,7 +11,7 @@ public class TicTacToeGame {
 	public static Scanner scanner = new Scanner(System.in);
 	
 	//@array to store board values
-	private char[] board = new char[10];
+	public static char[] board = new char[10];
 	
 	//@parameters to choose the player choice and computer choice as X or O
 	public static char playerChoice, computerChoice;
@@ -20,7 +20,7 @@ public class TicTacToeGame {
 	/**
 	 * @method to create an empty board
 	 */
-	public void createBoard() {
+	public static void createBoard() {
 		for(int i=1;i<board.length;i++) {
 			board[i] = ' ';
 		}
@@ -39,11 +39,28 @@ public class TicTacToeGame {
 		
 	}
 	
+	/**
+	 * @method to display the board to the player
+	 */
+	public static void showBoard() {
+		//display row 1 
+		System.out.println(" "+board[1]+" | "+board[2]+" | "+board[3]);
+		System.out.println("-----------");
+		//display row 2
+		System.out.println(" "+board[4]+" | "+board[5]+" | "+board[6]);
+		System.out.println("-----------");
+		//display row 3
+		System.out.println(" "+board[7]+" | "+board[8]+" | "+board[9]);
+		
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to board game");
-		TicTacToeGame ticTacToe = new TicTacToeGame(); 
-		ticTacToe.createBoard();
+		
+		createBoard();
 		
 		choice();
+		
+		showBoard();
 	}
 }
