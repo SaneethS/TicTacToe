@@ -1,6 +1,6 @@
 package com.tictactoe;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**@class in which the methods to create tictactoe game is written
  * @author saneeths
@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class TicTacToeGame {
 	public static Scanner scanner = new Scanner(System.in);
+	
+	public static Random random = new Random();
 	
 	//@array to store board values
 	public static char[] board = new char[10];
@@ -85,12 +87,32 @@ public class TicTacToeGame {
 		 showBoard();
 	}
 	
+	/**
+	 * @method to check whether the player has toss or not
+	 * if he won its his turn
+	 * otherwise its computer turn
+	 */
+	public static void toss() {
+		System.out.println("Enter your choice\n1.Head\n2.Tail");
+		int choice = scanner.nextInt();
+		
+		int toss = random.nextInt(2)+1;
+		
+		if(choice == toss) {
+			System.out.println("You won toss, it's Your turn");
+		}else {
+			System.out.println("Computer won toss, it's computer turn");
+		}
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to board game");
 		
 		createBoard();
 		
 		choice();
+		
+		toss();
 		
 		desiredLocation();
 		
