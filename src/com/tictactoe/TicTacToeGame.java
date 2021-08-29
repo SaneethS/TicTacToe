@@ -16,6 +16,8 @@ public class TicTacToeGame {
 	//@parameters to choose the player choice and computer choice as X or O
 	public static char playerChoice, computerChoice;
 	
+	//@parameter to select the location in board by storing index
+	public static int location;
 	
 	/**
 	 * @method to create an empty board
@@ -54,6 +56,20 @@ public class TicTacToeGame {
 		
 	}
 	
+	/**
+	 * @method to select the location between index 1 and 9
+	 * and also checking the location is between 1 and 9
+	 */
+	public static void desiredLocation() {
+		System.out.println("Enter the location between 1 and 9");
+		location = scanner.nextInt();
+		
+		if(location < 1 || location > 9) {
+			System.out.println("Please Enter the number between 1 to 9 for location");
+			desiredLocation();
+		}
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to board game");
 		
@@ -61,6 +77,10 @@ public class TicTacToeGame {
 		
 		choice();
 		
+		desiredLocation();
+		
 		showBoard();
+		
+		
 	}
 }
