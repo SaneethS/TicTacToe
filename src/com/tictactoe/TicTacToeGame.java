@@ -70,6 +70,21 @@ public class TicTacToeGame {
 		}
 	}
 	
+	/**
+	 * @method to fill the location with X or O
+	 * if the location is filled it will ask for another loaction to fill
+	 */
+	public static void desiredMove() {
+		 if(board[location] == ' ')
+			 board[location] = playerChoice;
+		 else {
+			 System.out.println("This location is already filled so try another location");
+			 desiredLocation();
+			 desiredMove();
+		 }
+		 showBoard();
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to board game");
 		
@@ -79,7 +94,9 @@ public class TicTacToeGame {
 		
 		desiredLocation();
 		
-		showBoard();
+		desiredMove();
+		
+		
 		
 		
 	}
