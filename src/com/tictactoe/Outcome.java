@@ -70,21 +70,25 @@ public class Outcome {
 		
 		if(win == TicTacToeGame.playerChoice) {
 			System.out.println("You have won the game");
+			System.exit(0);
 		}
 		else if(win == TicTacToeGame.computerChoice) {
 			System.out.println("Computer have won the game");
+			System.exit(0);
 		}
 		else if(win == 'D') {
 			System.out.println("Game is a tie");
+			System.exit(0);
 		}
 		else {
 			if(TicTacToeGame.turn == "player") {
-				TicTacToeGame.turn = "computer";
 				System.out.println("Computer turn to play");
+				Computer.computer();
 			}
 			else {
 				TicTacToeGame.turn = "player";
 				System.out.println("Your turn to play");
+				TicTacToeGame.desiredLocation();
 			}
 		}
 	}
