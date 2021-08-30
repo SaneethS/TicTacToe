@@ -53,12 +53,9 @@ public class Outcome {
 		
 		for(i=1;i<=9;i++) 
 			if(TicTacToeGame.board[i] == ' ')
-				break;
+				return 'N';
+		return 'D';
 		
-		if(i == 9)
-			return 'D';
-		else
-			return 'N';
 
 	}
 	
@@ -87,7 +84,6 @@ public class Outcome {
 				Computer.computer();
 			}
 			else {
-				TicTacToeGame.turn = "player";
 				System.out.println("Your turn to play");
 				TicTacToeGame.desiredLocation();
 			}
