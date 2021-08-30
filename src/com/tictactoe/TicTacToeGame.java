@@ -122,6 +122,26 @@ public class TicTacToeGame {
 		}
 	}
 	
+	/**
+	 * @method is created to ask whether player wishes to play again or not
+	 */
+	public static void playAgain() {
+		System.out.println("Do you want to play again?(Y/N)");
+		char playChoice = scanner.next().charAt(0);
+		
+		if(playChoice == 'Y' || playChoice == 'y') {
+			createBoard();
+			choice();
+			toss();
+		}else if(playChoice == 'N' || playChoice == 'n') {
+			System.out.println("See you Again.");
+			System.exit(0);
+		}else {
+			System.out.println("Please enter Y or N");
+			playAgain();
+		}
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to board game");
 		

@@ -68,15 +68,15 @@ public class Outcome {
 		
 		if(win == TicTacToeGame.playerChoice) {
 			System.out.println("You have won the game");
-			System.exit(0);
+			TicTacToeGame.playAgain();
 		}
 		else if(win == TicTacToeGame.computerChoice) {
 			System.out.println("Computer have won the game");
-			System.exit(0);
+			TicTacToeGame.playAgain();
 		}
 		else if(win == 'D') {
 			System.out.println("Game is a tie");
-			System.exit(0);
+			TicTacToeGame.playAgain();
 		}
 		else {
 			if(TicTacToeGame.turn == "player") {
