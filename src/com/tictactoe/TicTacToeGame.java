@@ -21,6 +21,8 @@ public class TicTacToeGame {
 	//@parameter to select the location in board by storing index
 	public static int location;
 	
+	public static String turn;
+	
 	/**
 	 * @method to create an empty board
 	 */
@@ -38,8 +40,12 @@ public class TicTacToeGame {
 		playerChoice = scanner.next().charAt(0);
 		if(playerChoice == 'X') {
 			computerChoice = 'O';
-		}else
+		}else if(playerChoice == 'O')
 			computerChoice = 'X';
+		else {
+			System.out.println("Select X or O");
+			choice();
+		}
 		
 	}
 	
@@ -100,8 +106,10 @@ public class TicTacToeGame {
 		
 		if(choice == toss) {
 			System.out.println("You won toss, it's Your turn");
+			turn = "player";
 		}else {
 			System.out.println("Computer won toss, it's computer turn");
+			turn = "com";
 		}
 	}
 	
@@ -118,8 +126,8 @@ public class TicTacToeGame {
 		
 		desiredMove();
 		
+		Outcome.winCheck();
 		
-		
-		
+		Outcome.winTieResult();
 	}
 }
