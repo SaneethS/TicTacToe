@@ -51,7 +51,7 @@ public class Outcome {
 		
 		int i ;
 		
-		for(i=1;i<=9;i++)
+		for(i=1;i<=9;i++) 
 			if(TicTacToeGame.board[i] == ' ')
 				break;
 		
@@ -59,6 +59,7 @@ public class Outcome {
 			return 'D';
 		else
 			return 'N';
+
 	}
 	
 	/**
