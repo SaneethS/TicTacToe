@@ -106,6 +106,11 @@ public class TicTacToeGame {
 		System.out.println("Enter your choice\n1.Head\n2.Tail");
 		int choice = scanner.nextInt();
 		
+		if(choice<1 || choice>2) {
+			System.out.println("Enter the choice 1 or 2");
+			toss();
+		}
+		
 		int toss = random.nextInt(2)+1;
 		
 		if(choice == toss) {
