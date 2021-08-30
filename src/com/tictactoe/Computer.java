@@ -3,6 +3,7 @@ package com.tictactoe;
 import java.util.*;
 
 /**@class where UC8, UC9, UC10 and UC11 has been implemented in which computer game is played and also block the player moves
+ * according to U12 a player would play till the game is over and the winner is decided
  * @author saneeths
  *
  */
@@ -136,8 +137,7 @@ public class Computer {
 		int index = random.nextInt(9)+1;
 		if(TicTacToeGame.board[index] == ' ') {
 			TicTacToeGame.board[index] = TicTacToeGame.computerChoice;
-		}else
-			playComputer();
+		}
 	}
 	
 	/**
@@ -162,3 +162,4 @@ public class Computer {
 		}
 	}
 }
+
