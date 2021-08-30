@@ -69,6 +69,7 @@ public class TicTacToeGame {
 	 * and also checking the location is between 1 and 9
 	 */
 	public static void desiredLocation() {
+		turn = "player";
 		System.out.println("Enter the location between 1 and 9");
 		location = scanner.nextInt();
 		
@@ -76,6 +77,7 @@ public class TicTacToeGame {
 			System.out.println("Please Enter the number between 1 to 9 for location");
 			desiredLocation();
 		}
+		desiredMove();
 	}
 	
 	/**
@@ -91,6 +93,8 @@ public class TicTacToeGame {
 			 desiredMove();
 		 }
 		 showBoard();
+		 Outcome.winCheck();
+		 Outcome.winTieResult();
 	}
 	
 	/**
@@ -106,10 +110,10 @@ public class TicTacToeGame {
 		
 		if(choice == toss) {
 			System.out.println("You won toss, it's Your turn");
-			turn = "player";
+			desiredLocation();
 		}else {
 			System.out.println("Computer won toss, it's computer turn");
-			turn = "com";
+			Computer.computer();
 		}
 	}
 	
@@ -122,12 +126,6 @@ public class TicTacToeGame {
 		
 		toss();
 		
-		desiredLocation();
 		
-		desiredMove();
-		
-		Outcome.winCheck();
-		
-		Outcome.winTieResult();
 	}
 }
