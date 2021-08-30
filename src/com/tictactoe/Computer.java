@@ -2,7 +2,7 @@ package com.tictactoe;
 
 import java.util.*;
 
-/**@class where UC8 has been implemented in which computer game is played
+/**@class where UC8 and UC9 has been implemented in which computer game is played and also block the player moves
  * @author saneeths
  *
  */
@@ -11,6 +11,7 @@ public class Computer {
 	
 	/**
 	 * @method in which all the moves which computer is supposed to do is written
+	 * and block the moves of the player
 	 */
 	public static void computer() {
 		TicTacToeGame.turn = "computer";
@@ -64,7 +65,60 @@ public class Computer {
 				(TicTacToeGame.board[8]==TicTacToeGame.board[7]&&TicTacToeGame.board[7]==TicTacToeGame.computerChoice)
 				||(TicTacToeGame.board[6]==TicTacToeGame.board[3]&&TicTacToeGame.board[3]==TicTacToeGame.computerChoice))) {
 			TicTacToeGame.board[9] = TicTacToeGame.computerChoice;
-		}else {
+		}
+		//UC9 Blocking condition in which computer blocks player moves
+		else if(((TicTacToeGame.board[1]==' ')&&(TicTacToeGame.board[2]==TicTacToeGame.board[3]&&TicTacToeGame.board[2]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[4]==TicTacToeGame.board[7]&&TicTacToeGame.board[4]==TicTacToeGame.playerChoice)
+				||(TicTacToeGame.board[5]==TicTacToeGame.board[9]&&TicTacToeGame.board[5]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[1] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[2]==' ')&&(TicTacToeGame.board[1]==TicTacToeGame.board[3]&&TicTacToeGame.board[3]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[5]==TicTacToeGame.board[8]&&TicTacToeGame.board[8]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[2] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[3]==' ')&&(TicTacToeGame.board[1]==TicTacToeGame.board[2]&&TicTacToeGame.board[2]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[6]==TicTacToeGame.board[9]&&TicTacToeGame.board[9]==TicTacToeGame.playerChoice)
+				||(TicTacToeGame.board[5]==TicTacToeGame.board[7]&&TicTacToeGame.board[7]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[3] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[4]==' ')&&(TicTacToeGame.board[1]==TicTacToeGame.board[7]&&TicTacToeGame.board[1]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[5]==TicTacToeGame.board[6]&&TicTacToeGame.board[6]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[4] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[5]==' ')&&(TicTacToeGame.board[1]==TicTacToeGame.board[9]&&TicTacToeGame.board[1]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[7]==TicTacToeGame.board[3]&&TicTacToeGame.board[7]==TicTacToeGame.playerChoice)
+				||(TicTacToeGame.board[4]==TicTacToeGame.board[6]&&TicTacToeGame.board[6]==TicTacToeGame.playerChoice)
+				||(TicTacToeGame.board[2]==TicTacToeGame.board[8]&&TicTacToeGame.board[8]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[5] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[6]==' ')&&(TicTacToeGame.board[9]==TicTacToeGame.board[3]&&TicTacToeGame.board[3]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[5]==TicTacToeGame.board[4]&&TicTacToeGame.board[4]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[6] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[7]==' ')&&(TicTacToeGame.board[1]==TicTacToeGame.board[4]&&TicTacToeGame.board[4]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[3]==TicTacToeGame.board[5]&&TicTacToeGame.board[3]==TicTacToeGame.playerChoice)
+				||(TicTacToeGame.board[8]==TicTacToeGame.board[9]&&TicTacToeGame.board[8]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[7] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[8]==' ')&&(TicTacToeGame.board[9]==TicTacToeGame.board[7]&&TicTacToeGame.board[7]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[2]==TicTacToeGame.board[5]&&TicTacToeGame.board[2]==TicTacToeGame.playerChoice))) {
+			
+			TicTacToeGame.board[8] = TicTacToeGame.computerChoice;
+			
+		}else if(((TicTacToeGame.board[9]==' ')&&(TicTacToeGame.board[5]==TicTacToeGame.board[1]&&TicTacToeGame.board[5]==TicTacToeGame.playerChoice)||
+				(TicTacToeGame.board[8]==TicTacToeGame.board[7]&&TicTacToeGame.board[7]==TicTacToeGame.playerChoice)
+				||(TicTacToeGame.board[6]==TicTacToeGame.board[3]&&TicTacToeGame.board[3]==TicTacToeGame.playerChoice))) {
+			TicTacToeGame.board[9] = TicTacToeGame.computerChoice;
+		}
+		
+		else {
 			playComputer();
 		}
 		TicTacToeGame.showBoard();
