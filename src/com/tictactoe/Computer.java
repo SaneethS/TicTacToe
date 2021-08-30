@@ -2,7 +2,7 @@ package com.tictactoe;
 
 import java.util.*;
 
-/**@class where UC8 and UC9 has been implemented in which computer game is played and also block the player moves
+/**@class where UC8, UC9, UC10 and UC11 has been implemented in which computer game is played and also block the player moves
  * @author saneeths
  *
  */
@@ -115,11 +115,12 @@ public class Computer {
 		}else if((TicTacToeGame.board[9]==' ')&&((TicTacToeGame.board[5]==TicTacToeGame.board[1]&&TicTacToeGame.board[5]==TicTacToeGame.playerChoice)||
 				(TicTacToeGame.board[8]==TicTacToeGame.board[7]&&TicTacToeGame.board[7]==TicTacToeGame.playerChoice)
 				||(TicTacToeGame.board[6]==TicTacToeGame.board[3]&&TicTacToeGame.board[3]==TicTacToeGame.playerChoice))) {
+			
 			TicTacToeGame.board[9] = TicTacToeGame.computerChoice;
 		}
 		
 		else {
-			cornerPlay();
+			cornerAndCenterPlay();
 		}
 		TicTacToeGame.showBoard();
 		Outcome.winCheck();
@@ -140,9 +141,9 @@ public class Computer {
 	}
 	
 	/**
-	 * @method where the player is taking corner if neither is winning
+	 * @method where the player is taking corner if neither is winning and also taking center
 	 */
-	public static void cornerPlay() {
+	public static void cornerAndCenterPlay() {
 		int corner[] = {1,3,7,9};
 		boolean flag = false;
 		
@@ -153,7 +154,11 @@ public class Computer {
 				break;
 			}
 		}
-		if(flag == false)
-			playComputer();
+		if(flag == false) {
+			if(TicTacToeGame.board[5] == ' ')
+				TicTacToeGame.board[5] = TicTacToeGame.computerChoice;
+			else
+				playComputer();
+		}
 	}
 }
